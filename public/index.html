@@ -53,7 +53,7 @@ img.pic{max-width:220px;width:100%;border-radius:10px;display:block;filter:blur(
 input.f{width:100%;background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:11px;margin:6px 0}
 #toast{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:var(--tx);color:#111;padding:8px 14px;border-radius:10px;display:none;z-index:20;text-align:center}
 #rq{display:none;position:fixed;bottom:80px;left:12px;right:12px;max-width:420px;margin:auto;background:var(--cd);border:1px solid var(--a2);border-radius:12px;padding:12px;z-index:8}
-</style></head><body>
+#msgs{scroll-behavior:smooth}.m:not(.gift){animation:in .18s ease-out}@keyframes in{from{opacity:0;transform:translateY(6px)}}.me{border-bottom-right-radius:4px}.th{border-bottom-left-radius:4px}button:active{transform:scale(.97)}footer a{color:var(--a2);text-decoration:none}#st{box-shadow:0 6px 24px #ffb02033}.sys{background:var(--cd);padding:3px 10px;border-radius:10px}@media(prefers-reduced-motion:reduce){.m{animation:none}}</style></head><body>
 <div id="toast"></div>
 <div id="home">
 <header><div class="logo">Gap<b>Shap</b></div><div><span id="on"></span><button id="hb">🕘 History</button></div></header>
@@ -62,7 +62,7 @@ input.f{width:100%;background:var(--bg);border:1px solid var(--bd);border-radius
 <p>Chat with random people and make new friends. Free, anonymous text chat: a simple Omegle alternative.</p>
 <div class="lbl">Who do you want to chat with?</div>
 <div class="chips" id="fl"><button class="chip on" data-v="mix">Everyone (Mix)</button><button class="chip" data-v="m">Boys</button><button class="chip" data-v="f">Girls</button></div>
-<button class="pri big" id="st">Start Chat</button>
+<div class="lbl">Language</div><div class="chips" id="lg"><button class="chip on" data-v="any">Any</button><button class="chip" data-v="hi">Hindi</button><button class="chip" data-v="en">English</button></div><input class="f" id="tg" maxlength="60" placeholder="Interests, comma separated (cricket, music)" autocomplete="off"><button class="pri big" id="st">Start Chat</button>
 <label class="ck"><input type="checkbox" id="auto"> Auto-start: find a new partner as soon as a chat ends</label></section>
 <div class="ad" data-ad="top" data-t="Display responsive banner (320x100 / 728x90)"></div>
 <section class="seo"><h2>What is GapShap?</h2>
@@ -76,7 +76,7 @@ input.f{width:100%;background:var(--bg);border:1px solid var(--bd);border-radius
 <p>GapShap is for people aged 18 and over. Never share your phone number, address, passwords or money. Use the report button if someone makes you uncomfortable.</p>
 <h2>FAQ</h2>
 <p><b>Is GapShap free?</b> Yes, it is completely free.</p><p><b>Is it like Omegle?</b> Yes. You are matched with random strangers for text chat, with an optional gender filter.</p><p><b>Is my chat saved?</b> No. Nothing is stored on the server and your data is deleted when you leave.</p></section></main>
-<footer>© GapShap · Privacy · Terms</footer></div>
+<footer><a href="/blog/">Blog</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a> · <a href="/changelog.html">v2.0</a><br>© GapShap</footer></div>
 
 <div id="chat">
 <div class="top"><span class="av" id="pi"></span><div class="nm"><b id="pn">…</b><small id="ty"></small></div>
@@ -123,7 +123,7 @@ function connect(){
  if(S)S.disconnect();S=io();
  S.on('online',n=>$('#on').textContent='● '+n+' online');
  S.on('matched',p=>{endChat();partner=p;cur=[];$('#msgs').innerHTML='';$('#pn').textContent='@'+p.name;av($('#pi'),p.icon);
-  sys("You’re connected! Say hi 👋 Don’t share personal info.");const h=J('hist',[]).filter(x=>x.name!=p.name);h.unshift({name:p.name,icon:p.icon});localStorage.hist=JSON.stringify(h.slice(0,10))});
+  sys("You’re connected! Say hi 👋 Don’t share personal info. Phone numbers and links are hidden automatically.");const h=J('hist',[]).filter(x=>x.name!=p.name);h.unshift({name:p.name,icon:p.icon});localStorage.hist=JSON.stringify(h.slice(0,10))});
  S.on('left',()=>{sys('Your partner left the chat.');endChat();$('#pn').textContent='…';if($('#auto').checked)setTimeout(find,1200)});
  S.on('msg',m=>{add(m,0);$('#ty').textContent=''});
  S.on('react',r=>react(r.id,r.e));
@@ -138,7 +138,7 @@ function join(){
  if(!/^\w{3,16}$/.test(name))return toast('Username must be 3–16 letters, numbers or _');
  if(!gender)return toast('Select your gender');
  if(!$('#age').checked)return toast('Please confirm you are 18+');
- connect();S.emit('join',{name,icon,gender,want:val('#fl')},r=>{
+ connect();S.emit('join',{name,icon,gender,want:val('#fl'),lang:val('#lg'),tags:$('#tg').value},r=>{
   if(r.err){S.disconnect();return toast(r.err)}
   me={name,icon,gender};localStorage.me=JSON.stringify(me);joined=true;$('#md').style.display='none';show('chat');ads();if(pend){pend();pend=null}else find()})}
 function find(){endChat();sys('Looking for a stranger…');S.emit('find')}

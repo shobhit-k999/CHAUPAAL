@@ -4,12 +4,12 @@ const app=express(),srv=http.createServer(app),io=new Server(srv,{maxHttpBufferS
 app.set('trust proxy',1);app.use(express.static(__dirname+'/public'));
 const U=new Map(),N=new Map(),Q=new Set(),R=new Map(),B=new Map();
 const ICONS=['IG','SC','TG','WA','DC','X'],G=['m','f'];
-const wants=(a,b)=>a.want==='mix'||a.want===b.gender,fit=(a,b)=>wants(a,b)&&wants(b,a);
+const wants=(a,b)=>a.want==='mix'||a.want===b.gender,fit=(a,b)=>wants(a,b)&&wants(b,a)&&(a.lang==='any'||b.lang==='any'||a.lang===b.lang);
 const online=()=>io.emit('online',U.size);
 function pair(a,b){Q.delete(a.id);Q.delete(b.id);a.p=b.id;b.p=a.id;
  io.to(a.id).emit('matched',{name:b.name,icon:b.icon});io.to(b.id).emit('matched',{name:a.name,icon:a.icon})}
 function drop(u){const p=U.get(u.p);u.p=null;if(p&&p.p===u.id){p.p=null;io.to(p.id).emit('left')}}
-function find(u){if(u.p)drop(u);Q.delete(u.id);for(const id of Q){const b=U.get(id);if(b&&fit(u,b))return pair(u,b)}Q.add(u.id)}
+function find(u){if(u.p)drop(u);Q.delete(u.id);let best=null,sc=-1;for(const id of Q){const b=U.get(id);if(b&&fit(u,b)){const n=u.tags.filter(t=>b.tags.includes(t)).length;if(n>sc){best=b;sc=n}}}if(best)return pair(u,best);Q.add(u.id)}
 io.on('connection',s=>{
  const ip=String(s.handshake.headers['x-forwarded-for']||s.handshake.address).split(',')[0].trim();
  if((B.get(ip)||0)>Date.now()){s.emit('banned');return s.disconnect(true)}
@@ -20,10 +20,10 @@ io.on('connection',s=>{
   if(!/^\w{3,16}$/.test(name))return cb({err:'Username must be 3–16 letters, numbers or _'});
   if(!G.includes(d.gender))return cb({err:'Select your gender'});
   if(N.has(name.toLowerCase()))return cb({err:'This username is taken right now'});
-  u={id:s.id,name,icon:ICONS.includes(d.icon)?d.icon:'X',gender:d.gender,want:G.includes(d.want)?d.want:'mix',ip,p:null};
+  u={id:s.id,name,icon:ICONS.includes(d.icon)?d.icon:'X',gender:d.gender,want:G.includes(d.want)?d.want:'mix',lang:['hi','en'].includes(d.lang)?d.lang:'any',tags:String(d.tags||'').toLowerCase().split(',').map(x=>x.trim().slice(0,20)).filter(Boolean).slice(0,3),ip,p:null};
   U.set(s.id,u);N.set(name.toLowerCase(),s.id);online();cb({ok:1})});
  s.on('find',()=>u&&find(u));
- s.on('msg',m=>{const p=peer();if(!p||!m||flood())return;const k=m.kind,t=String(m.text||'');let ok=false;
+ s.on('msg',m=>{const p=peer();if(!p||!m||flood())return;const k=m.kind;let t=String(m.text||''),ok=false;if(k==='text'){t=t.replace(/(https?:\/\/|www\.)\S+/gi,'[link removed]').replace(/\+?\d[\d\s-]{8,}\d/g,'[number hidden]');if(t===u.last){u.dup=(u.dup||0)+1;if(u.dup>2)return}else u.dup=0;u.last=t}
   if(k==='text')ok=t.trim().length>0&&t.length<=500;
   else if(k==='gift')ok=t.length>0&&t.length<=8;
   else if(k==='img')ok=t.startsWith('data:image/jpeg;base64,')&&t.length<3e5;
