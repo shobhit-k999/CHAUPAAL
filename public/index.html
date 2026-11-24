@@ -8,55 +8,10 @@
 <meta property="og:title" content="GapShap – Random Chat, Make New Friends"><meta property="og:description" content="Free anonymous random chat. No login, no registration."><meta property="og:type" content="website"><meta property="og:url" content="https://gapshap-14dt.onrender.com/">
 <meta name="theme-color" content="#0d0f14"><meta name="google-site-verification" content="S1YCfqfwoyjZHWiVZb7e02Up32K2TraT7VOpMZxNvgU" />
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"GapShap","url":"https://gapshap-14dt.onrender.com/","applicationCategory":"SocialNetworkingApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is GapShap free?","acceptedAnswer":{"@type":"Answer","text":"Yes, GapShap is completely free. No registration or login is needed."}},{"@type":"Question","name":"Is GapShap like Omegle?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is an Omegle alternative where you chat with random strangers by text, with an optional gender filter."}},{"@type":"Question","name":"Is my chat saved?","acceptedAnswer":{"@type":"Answer","text":"No. Chats are not stored on the server and your data is deleted when you leave."}}]}]}</script>
-<style>
-:root{--bg:#0d0f14;--cd:#171a22;--bd:#262b38;--tx:#eceef4;--mu:#8e95a8;--ac:#ffb020;--a2:#2dd4bf}
-*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
-body{background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100dvh}
-button,input{font:inherit;color:inherit}
-button{cursor:pointer;background:var(--cd);border:1px solid var(--bd);padding:9px 14px;border-radius:10px}
-button:focus-visible,input:focus-visible{outline:2px solid var(--a2);outline-offset:2px}
-.pri,.chip.on{background:var(--ac);color:#1a1200;border-color:var(--ac);font-weight:700}
-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--bd)}
-.logo{font-weight:800;font-size:22px;letter-spacing:-.5px}.logo b{color:var(--ac)}
-#on{color:var(--a2);font-size:13px;margin-right:8px}
-.wrap{max-width:680px;margin:auto;padding:16px}
-.hero{padding:26px 0 8px}h1{font-size:30px;line-height:1.2;letter-spacing:-.5px}.hero p{color:var(--mu);margin:8px 0 18px}
-.lbl{color:var(--mu);font-size:13px;margin-top:10px}
-.chips{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap}
-.big{width:100%;padding:15px;font-size:18px;border-radius:14px;margin-top:10px}
-.ck{display:flex;gap:8px;align-items:center;color:var(--mu);margin-top:10px}
-.ad{margin:16px auto;min-height:90px;border:1px dashed var(--bd);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--mu);font-size:12px;text-align:center;padding:6px;overflow:hidden}
-.seo h2{font-size:18px;margin:20px 0 6px}.seo p,.seo li{color:var(--mu);margin-bottom:6px}.seo ul,.seo ol{padding-left:18px}
-footer{color:var(--mu);font-size:12px;text-align:center;padding:20px}
-#chat{display:none;flex-direction:column;height:100dvh;max-width:720px;margin:auto}
-.top{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--bd)}
-.top .nm{flex:1;min-width:0}.nm small{display:block;color:var(--a2);height:16px}
-.av{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;font-size:12px;font-weight:800;color:#111;flex:none}
-#msgs{flex:1;overflow:auto;padding:12px 12px 20px;display:flex;flex-direction:column;gap:8px}
-.m{max-width:80%;padding:8px 12px;border-radius:14px;position:relative;word-break:break-word}
-.me{align-self:flex-end;background:var(--ac);color:#1a1200}.th{align-self:flex-start;background:var(--cd);border:1px solid var(--bd)}
-.sys{align-self:center;color:var(--mu);font-size:12px;text-align:center}
-.q{font-size:12px;opacity:.75;border-left:3px solid var(--a2);padding-left:6px;margin-bottom:3px}
-.rx{position:absolute;bottom:-12px;right:6px;font-size:13px;background:var(--bg);border-radius:10px;padding:0 4px}
-.acts{display:none;gap:4px;margin-top:6px}.sel .acts{display:flex}.acts button{padding:2px 7px;background:var(--bg)}
-.gift{font-size:54px;line-height:1.1;background:none!important;border:0!important;animation:pop .35s}
-@keyframes pop{from{transform:scale(.3)}to{transform:scale(1)}}
-@media(prefers-reduced-motion:reduce){.gift{animation:none}}
-img.pic{max-width:220px;width:100%;border-radius:10px;display:block;filter:blur(20px);cursor:pointer}img.pic.on,.me img.pic{filter:none}
-#rp{display:none;padding:6px 12px;color:var(--mu);font-size:12px;border-top:1px solid var(--bd)}
-.bar{display:flex;gap:6px;padding:8px;border-top:1px solid var(--bd);padding-bottom:max(8px,env(safe-area-inset-bottom))}
-.bar input{flex:1;min-width:0;background:var(--cd);border:1px solid var(--bd);border-radius:20px;padding:10px 14px}
-.pan{display:none;flex-wrap:wrap;gap:6px;padding:6px 12px;border-top:1px solid var(--bd)}.pan span{font-size:26px;cursor:pointer}
-.md{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;padding:16px;z-index:9}
-.md>div{background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:18px;width:100%;max-width:400px;max-height:85dvh;overflow:auto}
-.md h3{margin-bottom:6px}.row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--bd)}.row span:nth-child(2){flex:1}
-input.f{width:100%;background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:11px;margin:6px 0}
-#toast{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:var(--tx);color:#111;padding:8px 14px;border-radius:10px;display:none;z-index:20;text-align:center}
-#rq{display:none;position:fixed;bottom:80px;left:12px;right:12px;max-width:420px;margin:auto;background:var(--cd);border:1px solid var(--a2);border-radius:12px;padding:12px;z-index:8}
-#msgs{scroll-behavior:smooth}.m:not(.gift){animation:in .18s ease-out}@keyframes in{from{opacity:0;transform:translateY(6px)}}.me{border-bottom-right-radius:4px}.th{border-bottom-left-radius:4px}button:active{transform:scale(.97)}footer a{color:var(--a2);text-decoration:none}#st{box-shadow:0 6px 24px #ffb02033}.sys{background:var(--cd);padding:3px 10px;border-radius:10px}@media(prefers-reduced-motion:reduce){.m{animation:none}}</style></head><body>
+<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/chat.css"><link rel="stylesheet" href="/css/themes.css"></head><body>
 <div id="toast"></div>
 <div id="home">
-<header><div class="logo">Gap<b>Shap</b></div><div><span id="on"></span><button id="hb">🕘 History</button></div></header>
+<header><div class="logo">Gap<b>Shap</b></div><div><input type="range" id="th" min="0" max="2" step="1" value="0" aria-label="Theme" title="Theme: dark, light, cute"><span id="tl">🌙</span><span id="on"></span><button id="hb">🕘 History</button></div></header>
 <main class="wrap">
 <section class="hero"><h1>Talk to strangers. No login, no sign-up.</h1>
 <p>Chat with random people and make new friends. Free, anonymous text chat: a simple Omegle alternative.</p>
@@ -76,7 +31,7 @@ input.f{width:100%;background:var(--bg);border:1px solid var(--bd);border-radius
 <p>GapShap is for people aged 18 and over. Never share your phone number, address, passwords or money. Use the report button if someone makes you uncomfortable.</p>
 <h2>FAQ</h2>
 <p><b>Is GapShap free?</b> Yes, it is completely free.</p><p><b>Is it like Omegle?</b> Yes. You are matched with random strangers for text chat, with an optional gender filter.</p><p><b>Is my chat saved?</b> No. Nothing is stored on the server and your data is deleted when you leave.</p></section></main>
-<footer><a href="/blog/">Blog</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a> · <a href="/changelog.html">v2.0</a><br>© GapShap</footer></div>
+<footer><a target="_blank" rel="noopener" href="/blog/">Blog</a> · <a target="_blank" rel="noopener" href="/about.html">About</a> · <a target="_blank" rel="noopener" href="/privacy.html">Privacy</a> · <a target="_blank" rel="noopener" href="/terms.html">Terms</a> · <a target="_blank" rel="noopener" href="/contact.html">Contact</a> · <a target="_blank" rel="noopener" href="/changelog.html">v3.0</a><br>© GapShap</footer></div>
 
 <div id="chat">
 <div class="top"><span class="av" id="pi"></span><div class="nm"><b id="pn">…</b><small id="ty"></small></div>
@@ -96,85 +51,8 @@ input.f{width:100%;background:var(--bg);border:1px solid var(--bd);border-radius
 <label class="ck"><input type="checkbox" id="age"> I am 18 or older</label>
 <button class="pri big" id="go">Continue</button><button class="big" id="cl">Cancel</button></div></div>
 <div class="md" id="hm"><div id="hbody"></div></div>
-<div id="rq"></div>
+<div class="md" id="lv"><div><h3>Leave this chat?</h3><p style="color:var(--mu)">Refreshing or going back will reset your chat and free your username.</p><button class="pri big" id="stay">Stay</button><button class="big" id="leave">Leave</button></div></div><div id="rq"></div>
 
-<script>
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-// ===== ADSENSE: apna publisher ID aur slot IDs yahan bharo =====
-const ADS={pub:'',slots:{top:'',mid:'',end:''}}; // pub: 'ca-pub-XXXXXXXXXXXXXXXX'
-const COL={IG:'#ff6fa5',SC:'#ffd84a',TG:'#4cc3f5',WA:'#3be07f',DC:'#8c98ff',X:'#aab'};
-const EMO=[...'😀😂😍😘😎🥺😭😡👍🙏🔥💯🎉😴🤔🙈'],GIFTS=['🌹','🍫','🧸','💍','🎂','☕','🍕','💎'];
-const J=(k,d)=>{try{return JSON.parse(localStorage[k])||d}catch(e){return d}};
-const val=g=>($(g+' .on')||{dataset:{}}).dataset.v;
-let S=null,me=J('me',{}),cur=[],partner=null,rep=null,pend=null,joined=false,tt,lt=0;
-function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',2500)}
-function ads(){
- if(ADS.pub&&!window.adl){window.adl=1;const s=document.createElement('script');s.async=1;s.crossOrigin='anonymous';s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='+ADS.pub;document.head.appendChild(s)}
- $$('.ad').forEach(e=>{if(e.dataset.d)return;const id=ADS.slots[e.dataset.ad];
-  if(ADS.pub&&id){e.dataset.d=1;e.innerHTML='<ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="'+ADS.pub+'" data-ad-slot="'+id+'" data-ad-format="auto" data-full-width-responsive="true"></ins>';(window.adsbygoogle=window.adsbygoogle||[]).push({})}
-  else e.textContent='AD SLOT "'+e.dataset.ad+'": '+e.dataset.t})}
-document.addEventListener('click',e=>{const c=e.target.closest('.chip');if(c){c.parentNode.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on')}});
-function pick(g,v){$$(g+' .chip').forEach(x=>x.classList.toggle('on',x.dataset.v===v))}
-function show(v){$('#home').style.display=v=='home'?'block':'none';$('#chat').style.display=v=='chat'?'flex':'none'}
-function av(el,ic){el.textContent=ic=='X'?'✦':ic;el.style.background=COL[ic]||COL.X}
-function sys(t){const d=document.createElement('div');d.className='sys';d.textContent=t;$('#msgs').append(d);$('#msgs').scrollTop=1e9}
-function setup(){$('#nm').value=me.name||'';if(me.icon)pick('#ic',me.icon);if(me.gender)pick('#gd',me.gender);$('#md').style.display='flex'}
-function connect(){
- if(S)S.disconnect();S=io();
- S.on('online',n=>$('#on').textContent='● '+n+' online');
- S.on('matched',p=>{endChat();partner=p;cur=[];$('#msgs').innerHTML='';$('#pn').textContent='@'+p.name;av($('#pi'),p.icon);
-  sys("You’re connected! Say hi 👋 Don’t share personal info. Phone numbers and links are hidden automatically.");const h=J('hist',[]).filter(x=>x.name!=p.name);h.unshift({name:p.name,icon:p.icon});localStorage.hist=JSON.stringify(h.slice(0,10))});
- S.on('left',()=>{sys('Your partner left the chat.');endChat();$('#pn').textContent='…';if($('#auto').checked)setTimeout(find,1200)});
- S.on('msg',m=>{add(m,0);$('#ty').textContent=''});
- S.on('react',r=>react(r.id,r.e));
- S.on('typing',()=>{$('#ty').textContent='typing…';clearTimeout(tt);tt=setTimeout(()=>$('#ty').textContent='',2000)});
- S.on('ret_in',f=>{const q=$('#rq');q.innerHTML='';const t=document.createElement('div');t.textContent='@'+f.name+' wants to reconnect with you';
-  const a=document.createElement('button');a.className='pri';a.textContent='Accept';a.onclick=()=>{S.emit('ret_ok',f.name);q.style.display='none'};
-  const i=document.createElement('button');i.textContent='Ignore';i.onclick=()=>q.style.display='none';q.append(t,a,' ',i);q.style.display='block'});
- S.on('banned',()=>{toast('You are blocked for 1 hour because of reports');exitChat()});
- S.on('disconnect',()=>{joined=false})}
-function join(){
- const name=$('#nm').value.trim(),icon=val('#ic'),gender=val('#gd');
- if(!/^\w{3,16}$/.test(name))return toast('Username must be 3–16 letters, numbers or _');
- if(!gender)return toast('Select your gender');
- if(!$('#age').checked)return toast('Please confirm you are 18+');
- connect();S.emit('join',{name,icon,gender,want:val('#fl'),lang:val('#lg'),tags:$('#tg').value},r=>{
-  if(r.err){S.disconnect();return toast(r.err)}
-  me={name,icon,gender};localStorage.me=JSON.stringify(me);joined=true;$('#md').style.display='none';show('chat');ads();if(pend){pend();pend=null}else find()})}
-function find(){endChat();sys('Looking for a stranger…');S.emit('find')}
-function endChat(){if(partner&&cur.length){const r=J('recent',[]);r.unshift({name:partner.name,icon:partner.icon,msgs:cur});localStorage.recent=JSON.stringify(r.slice(0,3))}partner=null;cur=[]}
-function exitChat(){endChat();if(S)S.disconnect();S=null;joined=false;show('home')}
-function react(id,e){const m=document.getElementById('m'+id);if(!m)return;let r=m.querySelector('.rx');if(!r){r=document.createElement('span');r.className='rx';m.append(r)}r.textContent=e}
-function add(m,mine){
- cur.push({m:mine,t:m.kind=='img'?'📷 Photo':m.text});
- const d=document.createElement('div');d.id='m'+m.id;d.className='m '+(mine?'me':'th')+(m.kind=='gift'?' gift':'');
- if(m.reply){const q=document.createElement('div');q.className='q';q.textContent=m.reply;d.append(q)}
- if(m.kind=='img'){const i=new Image();i.src=m.text;i.className='pic';i.onclick=e=>{i.classList.add('on');e.stopPropagation()};d.append(i)}else d.append(m.text);
- if(m.kind!='gift'){const a=document.createElement('div');a.className='acts';
-  ['↩','👍','❤️','😂','😮','😢'].forEach(x=>{const b=document.createElement('button');b.textContent=x;b.onclick=ev=>{ev.stopPropagation();d.classList.remove('sel');
-   if(x=='↩'){rep=m.kind=='img'?'📷 Photo':m.text.slice(0,60);$('#rp').textContent='↩ '+rep;$('#rp').style.display='block';$('#tx').focus()}else{S.emit('react',{id:m.id,e:x});react(m.id,x)}};a.append(b)});
-  d.append(a);d.onclick=()=>{const w=d.classList.contains('sel');$$('.sel').forEach(x=>x.classList.remove('sel'));if(!w)d.classList.add('sel')}}
- $('#msgs').append(d);$('#msgs').scrollTop=1e9}
-function send(o){if(!partner)return toast('Wait until you are connected');o.id=Date.now().toString(36)+Math.random().toString(36).slice(2,5);
- if(rep){o.reply=rep;rep=null;$('#rp').style.display='none'}S.emit('msg',o);add(o,1)}
-function sendTx(){const t=$('#tx').value.trim();if(t){send({kind:'text',text:t});$('#tx').value=''}}
-function pan(id,arr,fn){const p=$(id);arr.forEach(x=>{const s=document.createElement('span');s.textContent=x;s.onclick=()=>fn(x);p.append(s)})}
-pan('#ep',EMO,x=>{$('#tx').value+=x;$('#tx').focus()});pan('#gp',GIFTS,x=>{send({kind:'gift',text:x});$('#gp').style.display='none'});
-const tg=id=>{['#ep','#gp'].forEach(p=>$(p).style.display=p==id&&$(p).style.display!='flex'?'flex':'none')};
-$('#eb').onclick=()=>tg('#ep');$('#gb').onclick=()=>tg('#gp');$('#pb').onclick=()=>$('#ph').click();
-$('#ph').onchange=e=>{const f=e.target.files[0];e.target.value='';if(!f||!partner)return;const i=new Image();i.onload=()=>{const w=Math.min(800,i.width),c=document.createElement('canvas');c.width=w;c.height=i.height*w/i.width;c.getContext('2d').drawImage(i,0,0,c.width,c.height);let q=.6,u;do{u=c.toDataURL('image/jpeg',q);q-=.1}while(u.length>280000&&q>.2);if(u.length>290000)return toast('Photo is too large');send({kind:'img',text:u})};i.src=URL.createObjectURL(f)};
-$('#sd').onclick=sendTx;$('#tx').onkeydown=e=>{if(e.key=='Enter')sendTx()};
-$('#tx').oninput=()=>{if(partner&&Date.now()-lt>1500){lt=Date.now();S.emit('typing')}};
-$('#st').onclick=()=>{pend=null;setup()};$('#cl').onclick=()=>$('#md').style.display='none';$('#go').onclick=join;
-$('#nx').onclick=find;$('#ex').onclick=exitChat;$('#rpt').onclick=()=>{if(!partner)return;S.emit('report');toast('Reported. Finding someone new');find()};
-function row(p,txt,fn){const d=document.createElement('div');d.className='row';const a=document.createElement('span');a.className='av';av(a,p.icon);const n=document.createElement('span');n.textContent='@'+p.name;const b=document.createElement('button');b.textContent=txt;b.onclick=fn;d.append(a,n,b);return d}
-function hist(){const b=$('#hbody');b.innerHTML='<h3>History (last 10)</h3>';const h=J('hist',[]);if(!h.length)b.append('No history yet.');
- h.forEach(p=>b.append(row(p,'Reconnect',()=>{$('#hm').style.display='none';const f=()=>S.emit('ret',p.name,ok=>toast(ok?'Request sent ✅':'That user is not online'));if(joined)f();else{pend=f;setup()}})));
- b.insertAdjacentHTML('beforeend','<h3 style="margin-top:14px">Recent chats (last 3)</h3>');const r=J('recent',[]);if(!r.length)b.append('No recent chats.');
- r.forEach(c=>b.append(row(c,'View',()=>{b.innerHTML='<h3>@'+c.name.replace(/[<>&]/g,'')+'</h3>';c.msgs.forEach(m=>{const l=document.createElement('div');l.textContent=(m.m?'You: ':'Them: ')+m.t;b.append(l)});const x=document.createElement('button');x.textContent='Back';x.onclick=hist;b.append(x)})));
- const x=document.createElement('button');x.className='big';x.textContent='Close';x.onclick=()=>$('#hm').style.display='none';b.append(x);$('#hm').style.display='flex'}
-$('#hb').onclick=hist;$('#hb2').onclick=hist;
-ads();
-</script>
-<script src="/socket.io/socket.io.js"></script>
+<script src="/socket.io/socket.io.js"></script><script src="/js/ads.js"></script><script src="/js/app.js"></script><script src="/js/themes.js"></script><script src="/js/ui.js"></script>
+
 </body></html>

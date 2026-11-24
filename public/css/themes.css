@@ -1,0 +1,6 @@
+/* 3 themes: dark (default in base.css), light, cute */
+html[data-theme=light]{--bg:#f4f6fb;--cd:#fff;--bd:#dde2ee;--tx:#171a26;--mu:#5b6378;--ac:#f59e0b;--a2:#0f9488;--edge:#b45309}
+html[data-theme=cute]{--bg:#fff0f6;--cd:#fff;--bd:#ffcfe3;--tx:#4a2040;--mu:#9a5f86;--ac:#ff7eb6;--a2:#a66bff;--edge:#d94f90}
+html[data-theme=cute] body{background:linear-gradient(160deg,#fff0f6,#f1e6ff)}
+html[data-theme=cute] .m,html[data-theme=cute] button{border-radius:20px}
+html[data-theme=light] .md,html[data-theme=cute] .md{background:#0007}
