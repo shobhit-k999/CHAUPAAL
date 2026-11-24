@@ -15,3 +15,14 @@ button{box-shadow:0 2px 0 #0005}
 #ud{display:none;position:fixed;bottom:84px;left:50%;transform:translateX(-50%);gap:10px;align-items:center;background:var(--cd);border:1px solid var(--a2);border-radius:12px;padding:10px 14px;z-index:10;box-shadow:0 8px 24px #0007;overflow:hidden;white-space:nowrap}
 #ud i{position:absolute;left:0;bottom:0;height:3px;background:var(--a2);width:100%}#ud.go i{animation:drain 7s linear forwards}
 input[type=range]{width:56px;accent-color:var(--ac);vertical-align:middle}#tl{margin:0 8px 0 4px}
+
+.hid{display:none!important}
+#mn{position:fixed;left:0;right:0;bottom:0;background:var(--cd);border-top:1px solid var(--bd);border-radius:18px 18px 0 0;padding:14px;z-index:30;display:grid;gap:8px;box-shadow:0 -10px 30px #0008}
+.mr{display:flex;gap:6px;justify-content:space-around}.mr button{font-size:24px}
+.pan .x{margin-left:auto;font-size:16px;color:var(--mu);padding:2px 10px;border:1px solid var(--bd);border-radius:10px;order:99}
+#rooms{display:none;flex-direction:column;height:100dvh;max-width:720px;margin:auto}
+#rl{padding:12px;display:grid;gap:10px}#rl button{text-align:left;padding:15px;font-size:16px}
+#rmsgs{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.new{background:var(--a2);color:#04201c;font-size:11px;font-weight:700;padding:1px 7px;border-radius:8px;margin-left:6px;vertical-align:middle}
+.hero{position:relative}.hero::before{content:'';position:absolute;inset:-20px -10px auto;height:200px;background:radial-gradient(60% 100% at 50% 0,var(--ac),transparent 70%);opacity:.14;z-index:-1}
+h1{background:linear-gradient(90deg,var(--tx),var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent}

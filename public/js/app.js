@@ -7,12 +7,12 @@ let S=null,me=J('me',{}),cur=[],partner=null,rep=null,pend=null,joined=false,tt,
 function toast(t){const e=$('#toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',2500)}
 document.addEventListener('click',e=>{const c=e.target.closest('.chip');if(c){c.parentNode.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on')}});
 function pick(g,v){$$(g+' .chip').forEach(x=>x.classList.toggle('on',x.dataset.v===v))}
-function show(v){$('#home').style.display=v=='home'?'block':'none';$('#chat').style.display=v=='chat'?'flex':'none'}
+function show(v){$('#home').style.display=v=='home'?'block':'none';$('#chat').style.display=v=='chat'?'flex':'none';$('#rooms').style.display=v=='rooms'?'flex':'none'}
 function av(el,ic){el.textContent=ic=='X'?'✦':ic;el.style.background=COL[ic]||COL.X}
 function sys(t){const d=document.createElement('div');d.className='sys';d.textContent=t;$('#msgs').append(d);$('#msgs').scrollTop=1e9}
 function setup(){$('#nm').value=me.name||'';if(me.icon)pick('#ic',me.icon);if(me.gender)pick('#gd',me.gender);$('#md').style.display='flex'}
 function connect(){
- if(S)S.disconnect();S=io();
+ if(S)S.disconnect();S=io();if(window.onSocket)onSocket(S);
  S.on('online',n=>$('#on').textContent='● '+n+' online');
  S.on('matched',p=>{endChat();partner=p;cur=[];$('#msgs').innerHTML='';$('#pn').textContent='@'+p.name;av($('#pi'),p.icon);
   sys("You’re connected! Say hi 👋 Don’t share personal info. Phone numbers and links are hidden automatically.");const h=J('hist',[]).filter(x=>x.name!=p.name);h.unshift({name:p.name,icon:p.icon});localStorage.hist=JSON.stringify(h.slice(0,10))});
